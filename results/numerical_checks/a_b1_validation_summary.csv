@@ -1,0 +1,15 @@
+check,status
+known sample and n-1 correction,passed
+noise variance correction,passed
+parameter translation equivariance,passed
+negative Q retained and radius truncated,passed
+inside and outside observations retain direction,passed
+projection translation and radius scaling,passed
+single observation and empty batch shapes,passed
+center convention returns a fixed circle point,passed
+nonzero points near the center retain direction,passed
+zero fitted radius is compatible with projection and Bayes,passed
+explicit oracle and fitted entry points,passed
+invalid inputs rejected,passed
+input arrays are not modified,passed
+independent train/test integration with existing plug-in Bayes,passed
