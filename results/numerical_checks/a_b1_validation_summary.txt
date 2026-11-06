@@ -1,0 +1,22 @@
+Part A/B1 implementation checks; not the full Part C simulation study.
+Python: 3.12.0; NumPy: 2.1.1; seed: 5201.
+Passed 14 checks.
+Independent integration sample: n_train=500, n_test=500, sigma=0.15.
+Estimated center: [2.043553040330895, -2.944610466030192]; radius: 1.49451001782; raw Q: 2.23356019335.
+Maximum oracle-circle distance error: 6.6613381e-16.
+Maximum fitted-circle distance error: 6.6613381e-16.
+
+PASS: known sample and n-1 correction
+PASS: noise variance correction
+PASS: parameter translation equivariance
+PASS: negative Q retained and radius truncated
+PASS: inside and outside observations retain direction
+PASS: projection translation and radius scaling
+PASS: single observation and empty batch shapes
+PASS: center convention returns a fixed circle point
+PASS: nonzero points near the center retain direction
+PASS: zero fitted radius is compatible with projection and Bayes
+PASS: explicit oracle and fitted entry points
+PASS: invalid inputs rejected
+PASS: input arrays are not modified
+PASS: independent train/test integration with existing plug-in Bayes
