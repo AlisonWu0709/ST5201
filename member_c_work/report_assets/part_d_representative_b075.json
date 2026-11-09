@@ -1,0 +1,13 @@
+{
+  "setting": {
+    "b": 0.75,
+    "n": 2000,
+    "sigma": 0.15,
+    "repetition_id": 0
+  },
+  "dataset_id": "da3b85dc108c9a5011d54f94602d5a4b4f004e6c746c7d8ad802089900b30fda",
+  "method_rows": 4,
+  "dataset_matches_formal_results": true,
+  "source": "E:\\nus classes\\st5201\\ST5201-formal-results\\formal\\part_d_run01\\repetitions.csv",
+  "note": "Supplementary visualization reconstructed from the formal RNG stream; no formal result was changed."
+}
