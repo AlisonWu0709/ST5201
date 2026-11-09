@@ -34,9 +34,9 @@ Under squared Euclidean loss, conditional expected loss decomposes as `E[||a-X||
 
 `manifold_fitting(Y_train, Y_query, sigma)` requires independent arrays shaped `(n,2)` and `(m,2)`. It returns `(predictions, diagnostics)`. The wrapper calls the reference function `mf_weighted.manifold_fit_weighted` with `k=3` and explicit assignment radii:
 
-`r0 = r1 = 5*sigma/log10(n)` and `r2 = sqrt(10*sigma*log(1/sigma))/log10(n)`.
+`r0 = r1 = 5*sigma/log10(n)` and `r2 = 10*sigma*sqrt(log(1/sigma))/log10(n)`.
 
-The instructor function exposes `MFDiagnostics` with counts for `empty_sphere`, `zero_direction`, and `empty_cylinder`, and aggregate count/rate. Thus the wrapper reports the fallback conditions directly without instrumentation. The instructor function's built-in default for `r2` differs from the assignment formula, so the wrapper supplies the assignment value explicitly; the core source is not modified.
+The instructor function exposes `MFDiagnostics` with counts for `empty_sphere`, `zero_direction`, and `empty_cylinder`, and aggregate count/rate. Thus the wrapper reports the fallback conditions directly without instrumentation. 
 
 Step 1 uses a local spherical neighborhood around a query and its weighted center to estimate a contraction direction. Step 2 weights observations in a cylinder aligned with that direction, with a transverse radius and an axial taper, and returns their weighted center. If the first neighborhood is empty the query is returned; if the direction is numerically zero the first weighted center is returned; if the cylinder is empty the first weighted center is returned.
 

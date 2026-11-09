@@ -1,15 +1,15 @@
 Debugging inputs only: c=[0,0], R=1; independently generated train/query samples.
 Checks: output shapes, finite values, oracle/plugin entry points, K comparison, MF diagnostics.
 A far-query posterior-mean probe at [1e6, -1e6] was also finite.
-Maximum per-query norm difference between K=512 and K=1024 on 25-query subsets: 8.8991145e-16
+Maximum per-query norm difference between K=512 and K=1024 on 25-query subsets: 1.6021484e-15
 
 Overall MF fallbacks across all settings: 7/1080 (0.6481%).
-n=100, sigma=0.05: fallback counts empty_sphere=7, zero_direction=0, empty_cylinder=0; overall=7/120 (5.8333%); K diff=5.567e-16
-n=500, sigma=0.05: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=6.866e-16
-n=2000, sigma=0.05: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=4.578e-16
-n=100, sigma=0.15: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=4.546e-16
-n=500, sigma=0.15: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=5.661e-16
-n=2000, sigma=0.15: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=8.083e-16
-n=100, sigma=0.30: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=4.578e-16
-n=500, sigma=0.30: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=8.899e-16
-n=2000, sigma=0.30: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=7.948e-16
+n=100, sigma=0.05: fallback counts empty_sphere=7, zero_direction=0, empty_cylinder=0; overall=7/120 (5.8333%); K diff=6.753e-16
+n=500, sigma=0.05: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=8.886e-16
+n=2000, sigma=0.05: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=8.899e-16
+n=100, sigma=0.15: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=5.901e-16
+n=500, sigma=0.15: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=8.899e-16
+n=2000, sigma=0.15: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=1.602e-15
+n=100, sigma=0.30: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=7.948e-16
+n=500, sigma=0.30: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=1.333e-15
+n=2000, sigma=0.30: fallback counts empty_sphere=0, zero_direction=0, empty_cylinder=0; overall=0/120 (0.0000%); K diff=8.951e-16
