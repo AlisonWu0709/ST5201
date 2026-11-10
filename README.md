@@ -36,7 +36,7 @@ Under squared Euclidean loss, conditional expected loss decomposes as `E[||a-X||
 
 `r0 = r1 = 5*sigma/log10(n)` and `r2 = 10*sigma*sqrt(log(1/sigma))/log10(n)`.
 
-The instructor function exposes `MFDiagnostics` with counts for `empty_sphere`, `zero_direction`, and `empty_cylinder`, and aggregate count/rate. Thus the wrapper reports the fallback conditions directly without instrumentation. The instructor function's built-in `r2` default matches the assignment formula; the wrapper supplies the same value explicitly, and the core source remains unchanged.
+The instructor function exposes `MFDiagnostics` with counts for `empty_sphere`, `zero_direction`, and `empty_cylinder`, and aggregate count/rate. Thus the wrapper reports the fallback conditions directly without instrumentation. 
 
 Step 1 uses a local spherical neighborhood around a query and its weighted center to estimate a contraction direction. Step 2 weights observations in a cylinder aligned with that direction, with a transverse radius and an axial taper, and returns their weighted center. If the first neighborhood is empty the query is returned; if the direction is numerically zero the first weighted center is returned; if the cylinder is empty the first weighted center is returned.
 

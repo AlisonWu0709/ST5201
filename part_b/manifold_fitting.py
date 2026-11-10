@@ -22,7 +22,7 @@ def assignment_radii(n, sigma):
     denominator = math.log10(n)
     r0 = 5.0 * sigma / denominator
     r1 = r0
-    r2 = 10.0 * sigma * math.sqrt(math.log(1.0 / sigma)) / denominator
+    r2 = (10.0* sigma* math.sqrt(math.log(1.0 / sigma))/ denominator)
     return r0, r1, r2
 
 

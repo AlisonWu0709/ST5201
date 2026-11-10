@@ -1,5 +1,5 @@
 Part A/B1 implementation checks; not the full Part C simulation study.
-Python: 3.12.0; NumPy: 2.1.1; seed: 5201.
+Python: 3.13.9; NumPy: 2.3.5; seed: 5201.
 Passed 14 checks.
 Independent integration sample: n_train=500, n_test=500, sigma=0.15.
 Estimated center: [2.043553040330895, -2.944610466030192]; radius: 1.49451001782; raw Q: 2.23356019335.
