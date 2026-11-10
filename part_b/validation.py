@@ -31,6 +31,12 @@ def run_validation():
             # Separate random calls create independent training and query sets.
             train = generate_noisy_circle(rng, n, sigma)
             query = generate_noisy_circle(rng, 120, sigma)
+            expected_radii = (
+                5.0 * sigma / np.log10(n),
+                5.0 * sigma / np.log10(n),
+                10.0 * sigma * np.sqrt(np.log(1.0 / sigma)) / np.log10(n),
+            )
+            np.testing.assert_allclose(assignment_radii(n, sigma), expected_radii, rtol=1e-14)
             clean_query = query - rng.normal(0.0, sigma, size=query.shape)
             # Exercise the oracle and plug-in interfaces independently. For
             # this debugging check only, the plug-in arguments are known values.
