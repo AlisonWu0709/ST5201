@@ -1,2 +1,1 @@
-"""Reusable components for the ST5201 member-C work."""
-
+"""Part C/D simulation study: data generation, method adapters, metrics and run management."""

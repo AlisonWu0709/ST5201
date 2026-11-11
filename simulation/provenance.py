@@ -20,7 +20,7 @@ def source_hashes():
     paths = [ROOT / p for p in ('part_a/circle_estimator.py', 'part_b/projection.py',
              'part_b/bayes_estimator.py', 'part_b/manifold_fitting.py',
              'mf_weighted.py', 'part_c/parameter_recovery.py')]
-    paths += sorted((ROOT / 'member_c_work').glob('*.py'))
+    paths += sorted((ROOT / 'simulation').glob('*.py'))
     return {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
             for p in paths}
 

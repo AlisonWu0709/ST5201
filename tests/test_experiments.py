@@ -2,12 +2,12 @@ import json
 import numpy as np
 import pandas as pd
 import pytest
-from member_c_work.experiment import run_experiment, SMOKE_DESIGN, C_DESIGN, D_DESIGN
-from member_c_work.method_adapters import all_adapters, MethodAdapter
-from member_c_work.metrics_circle import circle_grid
-from member_c_work.metrics_ellipse import ellipse_grid, bidirectional_ellipse_errors
-from member_c_work.result_integration import validate_results, summarize_parameter_recovery
-from member_c_work.tests.test_integration import valid_frame
+from simulation.experiment import run_experiment, SMOKE_DESIGN, C_DESIGN, D_DESIGN
+from simulation.method_adapters import all_adapters, MethodAdapter
+from simulation.metrics_circle import circle_grid
+from simulation.metrics_ellipse import ellipse_grid, bidirectional_ellipse_errors
+from simulation.result_integration import validate_results, summarize_parameter_recovery
+from tests.test_integration import valid_frame
 
 
 @pytest.mark.parametrize('part,count', [('C', 6), ('D', 4)])

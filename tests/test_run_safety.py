@@ -3,10 +3,10 @@ import sys
 from unittest.mock import Mock
 import numpy as np
 import pytest
-from member_c_work import provenance
-from member_c_work.experiment import run_experiment, main, SMOKE_DESIGN
-from member_c_work.postprocess import summarize_run
-from member_c_work.method_adapters import all_adapters
+from simulation import provenance
+from simulation.experiment import run_experiment, main, SMOKE_DESIGN
+from simulation.postprocess import summarize_run
+from simulation.method_adapters import all_adapters
 
 
 @pytest.mark.parametrize('field', ['schema_version', 'seed', 'methods', 'config_hash',
@@ -27,9 +27,9 @@ def test_resume_rejects_provenance_changes(tmp_path, field):
 def test_source_fingerprint_includes_dependencies():
     hashes = provenance.source_hashes()
     for path in ['part_a/circle_estimator.py', 'part_b/projection.py', 'part_b/bayes_estimator.py',
-                 'part_b/manifold_fitting.py', 'mf_weighted.py', 'member_c_work/experiment.py',
-                 'member_c_work/method_adapters.py', 'member_c_work/metrics_circle.py',
-                 'member_c_work/metrics_ellipse.py', 'member_c_work/data_generation.py']:
+                 'part_b/manifold_fitting.py', 'mf_weighted.py', 'simulation/experiment.py',
+                 'simulation/method_adapters.py', 'simulation/metrics_circle.py',
+                 'simulation/metrics_ellipse.py', 'simulation/data_generation.py']:
         assert len(hashes[path]) == 64
 
 

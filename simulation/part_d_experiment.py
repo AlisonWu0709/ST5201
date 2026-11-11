@@ -1,10 +1,5 @@
-"""Part D Option 3: four fitted/raw methods, no oracle ellipse information."""
-from .experiment import D_DESIGN as DEFAULT_DESIGN, run_experiment as _run, main
+"""Part D (Option 3, ellipse) entry point: python -m simulation.part_d_experiment --smoke|--formal --output-dir DIR"""
+from .experiment import main
 
-
-def run_experiment(methods=None, design=None, checkpoint=None, smoke=False):
-    return _run('D', design, checkpoint, smoke, methods)
-
-
-if __name__ == '__main__':
-    main('D')
+if __name__ == "__main__":
+    main("D")

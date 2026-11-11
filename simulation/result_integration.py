@@ -1,7 +1,6 @@
-"""Schema validation and summaries for repetition-level results from all members."""
+"""Validation and parameter-recovery summary for Part C repetition-level results."""
 from __future__ import annotations
 
-from pathlib import Path
 import numpy as np
 import pandas as pd
 
@@ -11,19 +10,6 @@ KEYS = ["dataset_id", "repetition_id", "n", "sigma", "method"]
 METRICS = ["centre_squared_error", "radius_error", "radius_squared_error", "negative_Q",
            "denoising_mse", "radial_error", "coverage_error", "mf_fallback_rate"]
 REQUIRED = KEYS + METRICS
-
-
-def read_results(path: str | Path) -> pd.DataFrame:
-    path = Path(path)
-    if not path.exists():
-        raise FileNotFoundError(path)
-    if path.suffix.lower() == ".csv":
-        data = pd.read_csv(path)
-    elif path.suffix.lower() in {".parquet", ".pq"}:
-        data = pd.read_parquet(path)
-    else:
-        raise ValueError("results must be CSV or Parquet")
-    return validate_results(data)
 
 
 def validate_results(data: pd.DataFrame, expected_methods=METHODS,
@@ -84,12 +70,6 @@ def validate_results(data: pd.DataFrame, expected_methods=METHODS,
     return data
 
 
-def summarize_results(data: pd.DataFrame) -> pd.DataFrame:
-    from .statistics import grouped_summary
-    data = validate_results(data, expected_repetitions=None)
-    return grouped_summary(data, METRICS)
-
-
 def summarize_parameter_recovery(data: pd.DataFrame) -> pd.DataFrame:
     """Deduplicate circle estimates that are copied across denoising-method rows."""
     data = validate_results(data, expected_repetitions=None)
@@ -100,10 +80,3 @@ def summarize_parameter_recovery(data: pd.DataFrame) -> pd.DataFrame:
         raise ValueError("inconsistent parameter estimates within a dataset")
     from .statistics import grouped_summary
     return grouped_summary(unique, cols[-4:], group_by=("n", "sigma"))
-
-
-def write_results(data: pd.DataFrame, path: str | Path) -> None:
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    data.to_csv(path, index=False)
-

@@ -2,8 +2,8 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from member_c_work.result_integration import METHODS, METRICS, validate_results, summarize_parameter_recovery
-from member_c_work.visualization import plot_geometric_outputs, plot_metric
+from simulation.result_integration import METHODS, METRICS, validate_results, summarize_parameter_recovery
+from simulation.visualization import plot_geometric_outputs, plot_metric
 
 
 def valid_frame(reps=2):

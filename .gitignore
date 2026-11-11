@@ -1,29 +1,23 @@
 
+# Python
 __pycache__/
 *.py[cod]
 .venv/
-
-# Test/runtime caches; never experiment evidence.
 .pytest_cache/
 
-# Member C test-only output (keep formal results eligible for Git).
-/member_c_work/artifacts/smoke/
-/member_c_work/artifacts/benchmark/
-/member_c_work/artifacts/demo/
-/member_c_work/results/SMOKE_TEST_ONLY*
-/member_c_work/figures/SMOKE_TEST_ONLY*
+# Office lock files
+~$*
 
-# Local migration inventories and validation process logs.
-/member_c_work/reports/STAGE_1_5_BASELINE.json
-/member_c_work/reports/STAGE_1_5_INVENTORY.json
-/member_c_work/reports/STAGE_1_5_FILES.md
-/member_c_work/reports/validation_stage_*/
+# Simulation test-only output (smoke/benchmark/demo are never formal evidence).
+/simulation/artifacts/
+/simulation/results/SMOKE_TEST_ONLY*
+/simulation/figures/SMOKE_TEST_ONLY*
 
 # Atomic-write leftovers and temporary test runs, not final manifests/CSVs.
-/member_c_work/**/checkpoint.json.tmp
-/member_c_work/**/*.checkpoint.json.tmp
-/member_c_work/**/manifest.json.tmp
-/member_c_work/tests/tmp/
-/member_c_work/tests/.tmp/
-/member_c_work/tests/outputs/
-/member_c_work/.tmp/
+*.checkpoint.json.tmp
+checkpoint.json.tmp
+manifest.json.tmp
+/tests/tmp/
+/tests/.tmp/
+/tests/outputs/
+/simulation/.tmp/

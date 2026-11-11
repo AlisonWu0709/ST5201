@@ -1,10 +1,10 @@
 import numpy as np
 import pytest
 
-from member_c_work.metrics_circle import radial_error, coverage_error, circle_grid
-from member_c_work.metrics_ellipse import ellipse_grid, bidirectional_ellipse_errors, denoising_mse
-from member_c_work.data_generation import generate_ellipse_sample, generate_train_test
-from member_c_work.statistics import monte_carlo_summary
+from simulation.metrics_circle import radial_error, coverage_error, circle_grid
+from simulation.metrics_ellipse import ellipse_grid, bidirectional_ellipse_errors, denoising_mse
+from simulation.data_generation import generate_ellipse_sample, generate_train_test
+from simulation.statistics import monte_carlo_summary
 
 
 def test_circle_radial_known_answers():
